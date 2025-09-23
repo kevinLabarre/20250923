@@ -7,14 +7,18 @@
         </svg>
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a href="actualite">Actualités</a></li>
+        <li><a routerLink="/">Accueil</a></li>
+        <li><a routerLink="/actualite">Actualités</a></li>
+        <li><a routerLink="/compte">Comptes</a></li>
       </ul>
     </div>
-    <a href="" class="btn btn-ghost text-xl">Accueil</a>
+    <a routerLink="/" class="btn btn-ghost text-xl">Accueil</a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 text-lg">
-      <li><a href="actualite">Actualités</a></li>
+      <li><a routerLink="/" routerLinkActive="button-active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
+      <li><a routerLink="/actualite" routerLinkActive="button-active">Actualités</a></li>
+      <li><a routerLink="/compte" routerLinkActive="button-active">Comptes</a></li>
     </ul>
   </div>
   <div class="navbar-end">
