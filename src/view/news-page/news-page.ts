@@ -26,4 +26,9 @@ export class NewsPage implements OnInit {
     })
   }
 
+  handleDelete(news: INews) {
+    if (this.news)
+      this.news = this.news.filter((n) => n.id !== news.id)
+  }
+
 }

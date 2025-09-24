@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { INews } from '../../interface/INews';
 import { NewsService } from '../../service/news-service';
 
@@ -14,10 +14,13 @@ export class NewsCard {
 
   @Input({ required: true }) news!: INews
 
-  handleDelete() {
+  @Output() handleDelete = new EventEmitter<INews>
+
+  // Click sur le bouton de suppression
+  handleDeleteBtn() {
     if (this.news.id)
       this.newsService.deleteOneNews(this.news.id).subscribe({
-        next: (respApi) => console.log("news supprimée !", respApi),
+        next: (respApi) => this.handleDelete.emit(respApi),
         error: (err) => console.log("Erreur de suppression", err),
         complete: () => console.log("Requete terminée !")
       })

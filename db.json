@@ -64,15 +64,6 @@
       "image": "https://images.unsplash.com/photo-1603912699214-92627f304eb6?q=80&w=800"
     },
     {
-      "id": "8",
-      "categorie": "International",
-      "titre": "FakeBank ouvre une succursale sur Mars",
-      "texte": "Anticipant la colonisation martienne, FakeBank est fière d'annoncer l'ouverture de sa première agence extraterrestre. Les frais de virement Terre-Mars seront seulement de 99,99% du montant transféré.",
-      "datePublication": "2023-11-01",
-      "dateModification": "2023-11-05",
-      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=800"
-    },
-    {
       "id": "9",
       "categorie": "Technologie",
       "titre": "Notre nouvelle application bancaire intègre un détecteur de panique financière",
@@ -125,33 +116,6 @@
       "datePublication": "2023-12-01",
       "dateModification": null,
       "image": "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?q=80&w=800"
-    },
-    {
-      "id": "15",
-      "categorie": "Service Client",
-      "titre": "Notre nouveau service téléphonique vous met en attente avant même que vous n'appeliez",
-      "texte": "Grâce à notre technologie prédictive révolutionnaire, nous savons quand vous allez nous appeler. Pour gagner du temps, nous vous mettons en attente 10 minutes avant même que vous ne composiez notre numéro. Un email vous informera que vous êtes déjà en attente.",
-      "datePublication": "2023-11-28",
-      "dateModification": "2023-11-29",
-      "image": "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=800"
-    },
-    {
-      "id": "16",
-      "categorie": "Investissement",
-      "titre": "FakeBank propose d'investir dans les rêves brisés : 'rendement garanti de 100% en déception'",
-      "texte": "Notre nouveau fonds d'investissement se spécialise dans les startups vouées à l'échec et les ambitions irréalistes. Notre brochure promet : 'La seule chose qui monte plus vite que l'inflation, c'est le taux de désillusion de nos clients.'",
-      "datePublication": "2023-12-05",
-      "dateModification": null,
-      "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=800"
-    },
-    {
-      "id": "17",
-      "categorie": "Technologie",
-      "titre": "Notre algorithme de crédit utilise désormais votre historique de recherche et vos playlists Spotify",
-      "texte": "Pour une analyse financière plus précise, notre IA évalue maintenant votre solvabilité en fonction de vos goûts musicaux. Les fans de K-pop obtiennent automatiquement un bonus, tandis que les amateurs de chansons sur la faillite sont soumis à une enquête approfondie.",
-      "datePublication": "2023-11-25",
-      "dateModification": null,
-      "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800"
     }
   ]
 }
