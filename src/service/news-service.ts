@@ -10,10 +10,14 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-  url: string = "http://localhost:3000/actualites"
+  private url: string = "http://localhost:3000/actualites"
 
   getAllNews(): Observable<INews[]> {
     return this.http.get<INews[]>(this.url)
+  }
+
+  deleteOneNews(id: number): Observable<INews> {
+    return this.http.delete<INews>(`${this.url}/${id}`)
   }
 
 }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DemoOutput } from "../../component/demo-output/demo-output";
 
 @Component({
   selector: 'app-homepage',
-  imports: [FormsModule],
+  imports: [FormsModule, DemoOutput],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css'
 })
@@ -20,4 +21,15 @@ export class Homepage {
     // this.router.navigate(["actualite", "test1", "test2"]); // --> navigue vers actualite/test1/test2
     this.router.navigate(["actualite", this.slugValue]); // --> navigue vers actualite/test1/test2
   }
+
+
+  // Exemple @output --> passage de données de enfant vers parent
+
+  childData: string = "";
+
+  receiveData(data: string) {
+    console.log("passé par l'enfant :", data)
+    this.childData = data;
+  }
+
 }

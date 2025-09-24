@@ -3,4 +3,9 @@
 
   <input type="text" [(ngModel)]="slugValue">
   <button (click)="handleNavigate()">Rediriger</button>
+
+  <h2>Démo passage de données de enfant vers parent</h2>
+
+  <app-demo-output (parentFct)="receiveData($event)" />
+  <p>Donnée reçue par l'enfant : {{childData}}</p>
 </section>

@@ -1,0 +1,24 @@
+<div class="card bg-base-100 shadow-xl h-full flex flex-col">
+  <figure class="h-32 overflow-hidden flex-shrink-0">
+    <!--
+    <img src="{{ news.image }}" alt="image de la news" class="w-full h-full object-cover" />
+    -->
+    <img [src]="news.image" alt="image de la news" class="w-full h-full object-cover" />
+  </figure>
+  <div class="card-body flex flex-col flex-grow">
+    <h2 class="card-title line-clamp-2">{{ news.titre }}</h2>
+    <p class="line-clamp-3 flex-grow">{{ news.texte }}</p>
+    <p class="text-accent">Date de publication : {{news.datePublication }}</p>
+    <p class="text-accent">Date de publication : {{news.datePublication}}</p>
+    @if(news.dateModification){
+    <p class="text-accent">Dernière modif : {{news.dateModification }}</p>
+    }
+    <div class="card-actions justify-end mt-auto">
+      <button class="btn btn-primary">Lire la suite</button>
+
+      <button (click)="handleDelete()" class="btn btn-error">Supprimer</button>
+
+    </div>
+
+  </div>
+</div>
