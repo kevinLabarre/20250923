@@ -10,24 +10,6 @@
       "dateModification": "2025-07-04T12:42:10.600Z"
     },
     {
-      "id": "2",
-      "categorie": "Sécurité",
-      "titre": "Nouveau système de sécurité : votre argent est si bien caché que même nous ne savons pas où il est",
-      "texte": "FakeBank est fière d'annoncer son nouveau protocole de sécurité révolutionnaire. Votre argent est désormais si bien protégé que même nos comptables ne peuvent pas le trouver. Nous appelons cela 'la sécurité par confusion totale'.",
-      "datePublication": "2023-11-02",
-      "dateModification": null,
-      "image": "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?q=80&w=800"
-    },
-    {
-      "id": "3",
-      "categorie": "Innovation",
-      "titre": "FakeBank remplace tous ses conseillers par des ChatGPT en cravate",
-      "texte": "Dans un souci de modernisation, tous nos conseillers clientèle seront remplacés par des IA avancées portant des cravates virtuelles. Les premiers tests montrent qu'elles sont 200% plus efficaces pour dire 'avez-vous essayé d'éteindre et de rallumer votre application bancaire ?'",
-      "datePublication": "2023-11-10",
-      "dateModification": null,
-      "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=800"
-    },
-    {
       "id": "4",
       "categorie": "Économie",
       "titre": "Inflation record : le café de notre distributeur atteint 5€",
@@ -71,15 +53,6 @@
       "datePublication": "2023-09-15",
       "dateModification": "2023-09-18",
       "image": "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=800"
-    },
-    {
-      "id": "10",
-      "categorie": "Formation",
-      "titre": "FakeBank lance des cours d'économie pour enfants : 'Comment dépenser l'argent de poche de tes parents'",
-      "texte": "Notre nouveau programme éducatif apprend aux enfants les bases de la finance moderne : acheter des bonbons à crédit, blâmer l'inflation pour les dépenses excessives et créer un paradis fiscal dans le bac à sable.",
-      "datePublication": "2023-10-25",
-      "dateModification": null,
-      "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?q=80&w=800"
     },
     {
       "id": "11",

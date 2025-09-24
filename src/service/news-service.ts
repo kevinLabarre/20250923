@@ -21,5 +21,7 @@ export class NewsService {
   }
 
   // GetById
-
+  getNewsById(id: number): Observable<INews> {
+    return this.http.get<INews>(`${this.url}/${id}`)
+  }
 }

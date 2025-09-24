@@ -1,4 +1,26 @@
 <section>
   <h1>Détails de l'actualité</h1>
   <p>paramètre de l'url: {{id}}</p>
+  <h2>Actualité chargée: </h2>
+  @if(news){
+  <app-news-card [news]="news" (handleDelete)="handleDelete($event)" />
+  @if(news.id){
+  <div role="tablist" class="tabs tabs-box w-fit mt-4">
+    <a [routerLink]="['/actualite',news.id , 'modifier']" routerLinkActive="tab-active" role="tab"
+      class="tab">Modifier</a>
+    <a role="tab" [routerLink]="['/actualite',news.id, 'description']" routerLinkActive="tab-active"
+      class="tab">Description</a>
+    <!--
+    <a role="tab" class="tab tab-active">Tab 2</a>
+    -->
+    <a role="tab" [routerLink]="['/actualite',news.id, 'autres']" routerLinkActive="tab-active" class="tab">Autres</a>
+  </div>
+  <router-outlet />
+  }
+  }
+
+
+
+
+
 </section>
