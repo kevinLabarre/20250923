@@ -31,7 +31,6 @@ export class NewsDetailPage implements OnInit {
       console.log("Dans le if !")
       this.news = undefined
     }
-
   }
 
 }

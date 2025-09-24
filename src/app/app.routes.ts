@@ -8,7 +8,10 @@ import { Description } from '../component/nav-newsDetails/description/descriptio
 import { Other } from '../component/nav-newsDetails/other/other';
 
 export const routes: Routes = [
-  { path: "", component: Homepage, title: "Accueil" },
+  // { path: "", component: Homepage, title: "Accueil" },
+
+  { path: "", redirectTo: "actualite", title: "Accueil", pathMatch: 'full' },
+
   { path: "actualite", component: NewsPage, title: "Actualités" },
 
   // Exemple navigation avec onglets :
@@ -16,6 +19,7 @@ export const routes: Routes = [
   // --> Il faut ajouter un router-outlet dans NewsDetailPage
   {
     path: "actualite/:id", component: NewsDetailPage, title: "Actualités: détails", children: [
+      { path: "", redirectTo: "modifier", pathMatch: 'full' }, // optionnel ! -> Pour forcer la navigation vers une route enfant (pour éviter qu'on puisse aller sur actualite/:id)
       { path: "modifier", component: Update },
       { path: "description", component: Description },
       { path: "autres", component: Other },
