@@ -9,10 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NewsDetailPage {
 
-  slug: string = "";
+
+  // Charger et afficher l'actualité correspondant à l'id de l'url
+
+
+  id: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe(params => this.slug = params['slug']);
+    this.activatedRoute.params.subscribe(params => this.id = params['id']);
     // this.activatedRoute.params.subscribe(params => console.log(params));
   }
 

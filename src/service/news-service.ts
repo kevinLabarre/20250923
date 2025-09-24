@@ -20,4 +20,6 @@ export class NewsService {
     return this.http.delete<INews>(`${this.url}/${id}`)
   }
 
+  // GetById
+
 }

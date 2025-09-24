@@ -7,6 +7,6 @@ import { NewsDetailPage } from '../view/news-detail-page/news-detail-page';
 export const routes: Routes = [
   { path: "", component: Homepage, title: "Accueil" },
   { path: "actualite", component: NewsPage, title: "Actualités" },
-  { path: "actualite/:slug", component: NewsDetailPage, title: "Actualités: détails" },
+  { path: "actualite/:id", component: NewsDetailPage, title: "Actualités: détails" },
   { path: "compte", component: AccountsPage, title: "Les comptes" },
 ];

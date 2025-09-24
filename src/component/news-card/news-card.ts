@@ -1,16 +1,17 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { INews } from '../../interface/INews';
 import { NewsService } from '../../service/news-service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-news-card',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './news-card.html',
   styleUrl: './news-card.css'
 })
 export class NewsCard {
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService, private router: Router) { }
 
   @Input({ required: true }) news!: INews
 
@@ -25,6 +26,10 @@ export class NewsCard {
         complete: () => console.log("Requete terminée !")
       })
     else console.error("Pas d'id dans la news !")
+  }
+
+  navigateToDetailPage() {
+    this.router.navigate(['/actualite', this.news.id])
   }
 
 }

@@ -15,11 +15,11 @@ export class Homepage {
     console.log('Exécuté au chargement du composant')
   }
 
-  slugValue: string = "";
+  idValue: string = "";
 
   handleNavigate() {
     // this.router.navigate(["actualite", "test1", "test2"]); // --> navigue vers actualite/test1/test2
-    this.router.navigate(["actualite", this.slugValue]); // --> navigue vers actualite/test1/test2
+    this.router.navigate(["actualite", this.idValue]); // --> navigue vers actualite/test1/test2
   }
 
 
