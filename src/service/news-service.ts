@@ -24,4 +24,9 @@ export class NewsService {
   getNewsById(id: number): Observable<INews> {
     return this.http.get<INews>(`${this.url}/${id}`)
   }
+
+  addOneNews(news: INews): Observable<INews> {
+    return this.http.post<INews>(this.url, news)
+  }
+
 }

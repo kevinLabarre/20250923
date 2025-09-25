@@ -27,7 +27,6 @@ export class LoginPage {
 
   handleSubmitWithReactiveForm() {
     if (this.loginForm.valid) {
-
       const formValue = this.loginForm.value;  // Objet javascript qui contient les valeurs des inputs
       console.log("credential: ", formValue)
 
@@ -35,7 +34,6 @@ export class LoginPage {
     } else {
       console.log("Erreur de validation !")
     }
-
   }
 
   get requiredLoginError() {

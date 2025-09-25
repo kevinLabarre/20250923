@@ -31,4 +31,10 @@ export class NewsPage implements OnInit {
       this.news = this.news.filter((n) => n.id !== news.id)
   }
 
+  dipslayForm: boolean = false
+
+  handleDisplayForm() {
+    this.dipslayForm = true;
+  }
+
 }

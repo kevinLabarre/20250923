@@ -5,4 +5,10 @@
   <app-news-list [news]="news" (handleDelete)="handleDelete($event)" />
   }
 
+  <button (click)="handleDisplayForm()" class="btn m-5 btn-primary w-full">Ajouter une actualité</button>
+
+  @if(dipslayForm){
+  <p>MON FORMULAIRE</p>
+  }
+
 </section>
