@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../service/news-service';
 import { INews } from '../../interface/INews';
 import { NewsList } from "../../component/news-list/news-list";
+import { NewsForm } from "../../component/news-form/news-form";
 
 @Component({
   selector: 'app-news-page',
-  imports: [NewsList],
+  imports: [NewsList, NewsForm],
   templateUrl: './news-page.html',
   styleUrl: './news-page.css'
 })
