@@ -34,4 +34,11 @@ export class NewsService {
     return this.http.post<INews>(this.url, news)
   }
 
+  updateNews(news: INews): Observable<INews> {
+    if (!news.id)
+      throw new Error("Mise à jour impossible: la news n'a pas d'id")
+
+    return this.http.put<INews>(`${this.url}/${news.id}`, news)
+  }
+
 }

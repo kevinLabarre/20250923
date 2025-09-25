@@ -1,0 +1,50 @@
+<div>
+  <form [formGroup]="newsForm" (ngSubmit)="handleUpdateNews()">
+
+    <div class="grid grid-cols-4 gap-4">
+
+      <div>
+        <label>
+          <span>Titre</span>
+        </label>
+        <input class="input w-full" formControlName="titre" type="text">
+
+        @if(titleRequiredError && titleTouched){
+        <span class="text-red-500">Erreur, champ requis</span>
+        }
+        @if (titleMaxLengthError && titleTouched) {
+        <span class="text-red-500">Erreur, 20 caractères max.</span>}
+      </div>
+
+      <div>
+        <label>
+          <span>Description</span>
+        </label>
+        <input class="input w-full" formControlName="texte" type="text">
+        @if(textError && textTouched){
+        <span class="text-red-500">Erreur, champ requis</span>
+        }
+      </div>
+
+      <div>
+        <label>
+          <span>Image</span>
+        </label>
+        <input class="input w-full" formControlName="image" type="text">
+      </div>
+
+      <div>
+        <label>
+          <span>Catégorie</span>
+        </label>
+        <input class="input w-full" formControlName="categorie" type="text">
+        @if(categorieError && categorieTouched){
+        <span class="text-red-500">Erreur, champ requis</span>
+        }
+      </div>
+    </div>
+    <div class="w-fit m-auto">
+      <button class="mt-2 btn btn-primary">Ajouter</button>
+    </div>
+  </form>
+</div>
