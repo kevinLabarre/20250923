@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { INews } from '../../interface/INews';
-import { NewsService } from '../../service/news-service';
+import { NewsService } from '../../service/news/news-service';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({

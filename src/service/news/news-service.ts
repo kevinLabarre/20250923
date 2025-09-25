@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { INews } from '../interface/INews';
+import { INews } from '../../interface/INews';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,11 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-  private url: string = "http://localhost:3000/actualites"
+  // Sans utiliser une var d'environnement
+  // private url: string = "http://localhost:3000/actualites"
+
+  // Avec une var d'environnement
+  private url: string = `${environment.url}/actualites`
 
   getAllNews(): Observable<INews[]> {
     return this.http.get<INews[]>(this.url)

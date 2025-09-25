@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../../service/news-service';
+import { NewsService } from '../../service/news/news-service';
 import { INews } from '../../interface/INews';
 import { NewsList } from "../../component/news-list/news-list";
 import { NewsForm } from "../../component/news-form/news-form";
@@ -36,6 +36,11 @@ export class NewsPage implements OnInit {
 
   handleDisplayForm() {
     this.dipslayForm = true;
+  }
+
+  handleAddOneNews(news: INews) {
+    if (this.news)
+      this.news.push(news)
   }
 
 }

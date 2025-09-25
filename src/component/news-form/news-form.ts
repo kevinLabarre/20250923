@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NewsService } from '../../service/news-service';
+import { NewsService } from '../../service/news/news-service';
 import { INews } from '../../interface/INews';
 
 @Component({
@@ -10,6 +10,8 @@ import { INews } from '../../interface/INews';
   styleUrl: './news-form.css'
 })
 export class NewsForm {
+
+  @Output() handleAddOneNews = new EventEmitter<INews>()
 
   constructor(private service: NewsService) { }
 
@@ -34,9 +36,12 @@ export class NewsForm {
         dateModification: new Date()
       }
 
-      this.service.addOneNews(news).subscribe(resp => console.log(resp))
+      this.service.addOneNews(news).subscribe({
+        next: (resp) => this.handleAddOneNews.emit(resp),
+        error: (err) => console.error(err),
+      })
     }
-    else console.log("Formulaire non valide !")
+    else console.error("Formulaire non valide !")
   }
 
   get titleRequiredError() {

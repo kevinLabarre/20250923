@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { Homepage } from '../view/homepage/homepage';
 import { NewsPage } from '../view/news-page/news-page';
 import { AccountsPage } from '../view/accounts-page/accounts-page';
 import { NewsDetailPage } from '../view/news-detail-page/news-detail-page';
@@ -7,11 +6,13 @@ import { Update } from '../component/nav-newsDetails/update/update';
 import { Description } from '../component/nav-newsDetails/description/description';
 import { Other } from '../component/nav-newsDetails/other/other';
 import { LoginPage } from '../view/login-page/login-page';
+import { Homepage } from '../view/homepage/homepage';
 
 export const routes: Routes = [
-  // { path: "", component: Homepage, title: "Accueil" },
+  { path: "", component: Homepage, title: "Accueil" },
 
-  { path: "", redirectTo: "actualite", title: "Accueil", pathMatch: 'full' },
+  // Pour faire des redirections:
+  // { path: "", redirectTo: "actualite", title: "Accueil", pathMatch: 'full' },
 
   { path: "actualite", component: NewsPage, title: "Actualités" },
 

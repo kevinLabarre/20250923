@@ -8,7 +8,7 @@
   <button (click)="handleDisplayForm()" class="btn m-5 btn-primary w-full">Ajouter une actualité</button>
 
   @if(dipslayForm){
-  <app-news-form />
+  <app-news-form (handleAddOneNews)="handleAddOneNews($event)" />
   }
 
 </section>
