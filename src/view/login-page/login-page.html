@@ -1,0 +1,33 @@
+<section>
+  <h1>Connexion</h1>
+  <h2>Exemple avec ngModel</h2>
+
+  <form (ngSubmit)="handleSubmit($event)">
+    <input [(ngModel)]="login" name="login" type="text">
+    <input [(ngModel)]="password" name="password" type="password">
+    <button>se connecter</button>
+  </form>
+
+  <h2>Exemple avec Reactive forms module: </h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="handleSubmitWithReactiveForm()">
+    <input formControlName="login" type="text">
+
+    @if(requiredLoginError && loginTouched){
+    <span>nom d'utilisateur requis</span>
+    }
+
+    @if(formatMailLoginError && loginTouched){
+    <span>Format incorrect</span>
+    }
+
+    <input formControlName="password" type="password">
+
+    @if(requiredPasswordError && passwordTouched){
+    <span>Mot de passe requis</span>
+    }
+
+    <button>se connecter</button>
+  </form>
+
+</section>
