@@ -10,7 +10,7 @@ export class ShareDataService {
 
   newsShareByShareService$ = this.news.asObservable();
 
-  shareNew(news: INews) {
+  shareNews(news: INews) {
     this.news.next(news)
   }
 

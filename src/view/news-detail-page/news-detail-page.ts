@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NewsService } from '../../service/news/news-service';
 import { INews } from '../../interface/INews';
 import { NewsCard } from "../../component/news-card/news-card";
 import { ShareDataService } from '../../service/shareData/share-data-service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-news-detail-page',
@@ -11,11 +12,13 @@ import { ShareDataService } from '../../service/shareData/share-data-service';
   templateUrl: './news-detail-page.html',
   styleUrl: './news-detail-page.css'
 })
-export class NewsDetailPage implements OnInit {
+export class NewsDetailPage implements OnInit, OnDestroy {
 
   id: number = 0;
 
   news?: INews
+
+  private subscription: Subscription = new Subscription();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,12 +28,15 @@ export class NewsDetailPage implements OnInit {
     this.activatedRoute.params.subscribe(params => this.id = params['id']);
     // this.activatedRoute.params.subscribe(params => console.log(params));
   }
+
   ngOnInit(): void {
     if (this.id !== 0)
       this.service.getNewsById(this.id).subscribe((resp) => {
-        this.shareDataService.shareNew(resp)
-        this.news = resp
+        this.shareDataService.shareNews(resp)
+        // this.news = resp
       })
+
+    this.subscription = this.shareDataService.newsShareByShareService$.subscribe(resp => this.news = resp)
   }
 
   handleDelete(news: INews) {
@@ -39,6 +45,10 @@ export class NewsDetailPage implements OnInit {
       console.log("Dans le if !")
       this.news = undefined
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

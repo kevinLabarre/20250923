@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { INews } from '../../interface/INews';
 import { NewsService } from '../../service/news/news-service';
+import { ShareDataService } from '../../service/shareData/share-data-service';
 
 @Component({
   selector: 'app-update-news-form',
@@ -12,7 +13,7 @@ import { NewsService } from '../../service/news/news-service';
 export class UpdateNewsForm implements OnInit {
   @Input({ required: true }) news!: INews
 
-  constructor(private service: NewsService) { }
+  constructor(private service: NewsService, private shareDataService: ShareDataService) { }
 
   newsForm = new FormGroup({
     titre: new FormControl('', [Validators.required, Validators.maxLength(20)]),
@@ -55,7 +56,10 @@ export class UpdateNewsForm implements OnInit {
         datePublication: new Date(), // new Date() retourne la date actuelle
         dateModification: new Date()
       }
-      this.service.updateNews(news).subscribe((resp) => console.log(resp))
+      this.service.updateNews(news).subscribe({
+        next: (resp) => this.shareDataService.shareNews(resp),
+        error: (err) => console.error(err),
+      })
     }
     else console.error("Formulaire non valide !")
   }
