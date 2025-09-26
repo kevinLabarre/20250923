@@ -1,39 +1,20 @@
 import { Routes } from '@angular/router';
-import { NewsPage } from '../view/news-page/news-page';
-import { AccountsPage } from '../view/accounts-page/accounts-page';
-import { NewsDetailPage } from '../view/news-detail-page/news-detail-page';
-import { Update } from '../component/nav-newsDetails/update/update';
-import { Description } from '../component/nav-newsDetails/description/description';
-import { Other } from '../component/nav-newsDetails/other/other';
-import { LoginPage } from '../view/login-page/login-page';
-import { Homepage } from '../view/homepage/homepage';
-import { SignalsPage } from '../view/signals-page/signals-page';
-import { NewsWithSignal } from '../view/news-with-signal/news-with-signal';
+
+import { AdminLayout } from '../admin/admin-layout/admin-layout';
+import { ADMIN_ROUTES } from '../admin/routes/admin.routes';
+import { NotFound } from '../view/not-found/not-found';
+import { PublicLayout } from '../public/public-layout/public-layout';
+import { PUBLIC_ROUTES } from '../public/routes/public.routes';
 
 export const routes: Routes = [
-  { path: "", component: Homepage, title: "Accueil" },
 
-  // Pour faire des redirections:
-  // { path: "", redirectTo: "actualite", title: "Accueil", pathMatch: 'full' },
+  // Espace public
+  { path: "", component: PublicLayout, children: PUBLIC_ROUTES },
 
-  { path: "actualite", component: NewsPage, title: "Actualités" },
+  // Espace admin:
+  { path: "admin", component: AdminLayout, children: ADMIN_ROUTES },
 
-  // Exemple navigation avec onglets :
-  // Pour afficher les composants des routes enfants, il faut utiliser le router-outlet dans le composant de la route parent
-  // --> Il faut ajouter un router-outlet dans NewsDetailPage
-  {
-    path: "actualite/:id", component: NewsDetailPage, title: "Actualités: détails", children: [
-      { path: "", redirectTo: "modifier", pathMatch: 'full' }, // optionnel ! -> Pour forcer la navigation vers une route enfant (pour éviter qu'on puisse aller sur actualite/:id)
-      { path: "modifier", component: Update },
-      { path: "description", component: Description },
-      { path: "autres", component: Other },
-    ]
-  },
+  // Page 404
+  { path: "**", component: NotFound, title: "404" }
 
-  { path: "compte", component: AccountsPage, title: "Les comptes" },
-
-  { path: "signals", component: SignalsPage, title: "Les signaux" },
-  { path: "actualite-avec-signal", component: NewsWithSignal, title: "Les actualités avec les signaux" },
-
-  { path: "se-connecter", component: LoginPage, title: "Connexion" },
 ];

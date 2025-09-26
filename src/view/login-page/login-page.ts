@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../service/auth/auth-service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,6 +9,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   styleUrl: './login-page.css'
 })
 export class LoginPage {
+
+  private service = inject(AuthService)
 
   // Exemple avec ngModel :
   //    --> utilisé en général pour des formulaires 'simple'
@@ -30,7 +33,13 @@ export class LoginPage {
       const formValue = this.loginForm.value;  // Objet javascript qui contient les valeurs des inputs
       console.log("credential: ", formValue)
 
-      console.log("Formulaire soumis !")
+      const credential = {
+        login: formValue.login || "",
+        password: formValue.password || ""
+      }
+
+      this.service.login(credential)
+
     } else {
       console.log("Erreur de validation !")
     }
