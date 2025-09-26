@@ -38,7 +38,10 @@ export class LoginPage {
         password: formValue.password || ""
       }
 
-      this.service.login(credential)
+      this.service.login(credential).subscribe({
+        // next: (resp) => sessionStorage.setItem("token_key", resp.token)
+        next: (resp) => localStorage.setItem("token_key", resp.token)
+      }) // Requete pour se connecter
 
     } else {
       console.log("Erreur de validation !")

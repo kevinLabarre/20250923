@@ -17,7 +17,6 @@ export const adminGuard: CanMatchFn = (route, segments) => {
 };
 
 
-
 // Role d'un guard:
 // doit retourner un des trois éléments suivants:
 //    - true: autorise l'accès

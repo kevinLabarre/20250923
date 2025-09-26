@@ -10,6 +10,8 @@
 
   <h2>Exemple avec Reactive forms module: </h2>
 
+  <p> identifiants : {{'admin@admin.fr'}} / admin </p>
+  <br>
   <form [formGroup]="loginForm" (ngSubmit)="handleSubmitWithReactiveForm()">
     <input formControlName="login" type="text">
 

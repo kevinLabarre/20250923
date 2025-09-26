@@ -22,11 +22,22 @@ export const PUBLIC_ROUTES: Routes = [
   // Exemple navigation avec onglets :
   // Pour afficher les composants des routes enfants, il faut utiliser le router-outlet dans le composant de la route parent
   // --> Il faut ajouter un router-outlet dans NewsDetailPage
+  // {
+  //   path: "actualite/:id", component: NewsDetailPage, title: "Actualités: détails", children: [
+  //     { path: "", redirectTo: "modifier", pathMatch: 'full' }, // optionnel ! -> Pour forcer la navigation vers une route enfant (pour éviter qu'on puisse aller sur actualite/:id)
+  //     { path: "modifier", component: Update },
+  //     { path: "description", component: Description },
+  //     { path: "autres", component: Other },
+  //   ]
+  // },
+
+  // Avec lazy loading sur les routes enfants
   {
     path: "actualite/:id", component: NewsDetailPage, title: "Actualités: détails", children: [
       { path: "", redirectTo: "modifier", pathMatch: 'full' }, // optionnel ! -> Pour forcer la navigation vers une route enfant (pour éviter qu'on puisse aller sur actualite/:id)
       { path: "modifier", component: Update },
-      { path: "description", component: Description },
+      // Route ci-dessous utilise du lazyloading
+      { path: "description", loadComponent: () => import('../../component/nav-newsDetails/description/description').then(e => e.Description) },
       { path: "autres", component: Other },
     ]
   },
