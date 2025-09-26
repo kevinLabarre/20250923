@@ -5,6 +5,7 @@ import { ADMIN_ROUTES } from '../admin/routes/admin.routes';
 import { NotFound } from '../view/not-found/not-found';
 import { PublicLayout } from '../public/public-layout/public-layout';
 import { PUBLIC_ROUTES } from '../public/routes/public.routes';
+import { adminGuard } from '../admin/guard/admin-guard';
 
 export const routes: Routes = [
 
@@ -12,7 +13,7 @@ export const routes: Routes = [
   { path: "", component: PublicLayout, children: PUBLIC_ROUTES },
 
   // Espace admin:
-  { path: "admin", component: AdminLayout, children: ADMIN_ROUTES },
+  { path: "admin", component: AdminLayout, children: ADMIN_ROUTES, canMatch: [adminGuard] },
 
   // Page 404
   { path: "**", component: NotFound, title: "404" }
