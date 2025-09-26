@@ -2,10 +2,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { INews } from '../../interface/INews';
 import { NewsService } from '../../service/news/news-service';
 import { Router, RouterLink } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-news-card',
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './news-card.html',
   styleUrl: './news-card.css'
 })

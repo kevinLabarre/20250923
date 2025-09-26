@@ -1,1 +1,15 @@
-<p>accounts-page works!</p>
+<section>
+  <h1>Comptes bancaires</h1>
+
+  @for(a of account$ | async ; track a.id){
+  <ul>
+    <li>id: {{a.id}}</li>
+    <li>Solde: {{a.solde | currency:'EUR'}}</li>
+    <li>N° compte: {{a.accountNumber}}</li>
+    <li>Type: {{a.accountType}}</li>
+    <li>Dernière transaction: {{a.lastTransactionDate | date}}</li>
+  </ul>
+  <br>
+  }
+
+</section>

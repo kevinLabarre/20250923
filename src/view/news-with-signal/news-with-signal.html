@@ -1,0 +1,7 @@
+<section>
+  <h1>Les actu avec signaux</h1>
+
+  @if(news().length > 0){
+  <app-news-list [news]="news()" (handleDelete)="handleDelete($event)" />
+  }
+</section>

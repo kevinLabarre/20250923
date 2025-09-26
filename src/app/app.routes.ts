@@ -7,6 +7,8 @@ import { Description } from '../component/nav-newsDetails/description/descriptio
 import { Other } from '../component/nav-newsDetails/other/other';
 import { LoginPage } from '../view/login-page/login-page';
 import { Homepage } from '../view/homepage/homepage';
+import { SignalsPage } from '../view/signals-page/signals-page';
+import { NewsWithSignal } from '../view/news-with-signal/news-with-signal';
 
 export const routes: Routes = [
   { path: "", component: Homepage, title: "Accueil" },
@@ -29,5 +31,9 @@ export const routes: Routes = [
   },
 
   { path: "compte", component: AccountsPage, title: "Les comptes" },
+
+  { path: "signals", component: SignalsPage, title: "Les signaux" },
+  { path: "actualite-avec-signal", component: NewsWithSignal, title: "Les actualités avec les signaux" },
+
   { path: "se-connecter", component: LoginPage, title: "Connexion" },
 ];
